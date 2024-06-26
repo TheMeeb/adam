@@ -6,6 +6,8 @@ import random
 from openpyxl import load_workbook
 import time
 import datetime
+#Modules-------------------------------------------------------------------
+import application
 #variables-----------------------------------------------------------------
 r = sr.Recognizer()
 keywords = [("Adam",1),("hey Adam",1)]
@@ -44,6 +46,7 @@ def recognizer_main():
         try:
             print("You said: " + data)
             # Respond to different commands-------------------------------------
+            #Greeting----------------------------
             if data in hello_list:
                 hour = datetime.datetime.now().hour
                 if hour >=0 and hour <12:
@@ -68,6 +71,17 @@ def recognizer_main():
                     print(day_of_the_week)
                     Speak("The day is " + day_of_the_week)
                     time.sleep(2)
+            #Commands--------------------------------------------
+            elif "Open google chrome" in data :
+                application.Google()
+            elif "Open instagram" in data :
+                application.Instagram()
+            elif "Open Facebook" in data :
+                application.Facebook()
+            elif "Open Calculator" in data :
+                application.Notepad()
+            elif "Notepad" in data :
+                application.Notepad()
             else:
                 Speak("I am sorry sir")
         except sr.UnknownValueError:
