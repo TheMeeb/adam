@@ -7,7 +7,7 @@ from openpyxl import load_workbook
 import time
 import datetime
 #Modules-------------------------------------------------------------------
-import application
+import Applications 
 #variables-----------------------------------------------------------------
 r = sr.Recognizer()
 keywords = [("Adam",1),("hey Adam",1)]
@@ -73,15 +73,15 @@ def recognizer_main():
                     time.sleep(2)
             #Commands--------------------------------------------
             elif "Open google chrome" in data :
-                application.Google()
+                Applications.Google()
             elif "Open instagram" in data :
-                application.Instagram()
+                Applications.Instagram()
             elif "Open Facebook" in data :
-                application.Facebook()
+                Applications.Facebook()
             elif "Open Calculator" in data :
-                application.Notepad()
+                Applications.Notepad()
             elif "Notepad" in data :
-                application.Notepad()
+                Applications.Notepad()
             else:
                 Speak("I am sorry sir")
         except sr.UnknownValueError:
