@@ -8,7 +8,7 @@ import time
 import datetime
 #variables-----------------------------------------------------------------
 r = sr.Recognizer()
-keywords = [("baybrus",1),("hey baybrus",1)]
+keywords = [("Adam",1),("hey Adam",1)]
 source = sr.Microphone()
 #functions-----------------------------------------------------------------
 # speaks-------------------------------------------------------------------
@@ -25,7 +25,7 @@ def callback(recognizer,audio):
     try:
         speech_as_text = recognizer.recognizer_sphinx(audio, keyword_entries=keywords)
         print(speech_as_text)
-        if "Baybrus" in speech_as_text or "hi baybrus" :
+        if "Adam" in speech_as_text or "hi Adam" :
             Speak("hello sir ?")
             recognizer_main()
     except sr.UnknownValueError:
