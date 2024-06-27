@@ -25,7 +25,7 @@ def Speak(text):
 # Callback function---------------------------------------------------------
 def callback(recognizer,audio):
     try:
-        speech_as_text = recognizer.recognizer_sphinx(audio, keyword_entries=keywords)
+        speech_as_text = recognizer.recognize_sphinx(audio, keyword_entries=keywords)
         print(speech_as_text)
         if "Adam" in speech_as_text or "hi Adam" :
             Speak("hello sir ?")
